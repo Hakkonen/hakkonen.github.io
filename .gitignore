@@ -1,4 +1,4 @@
 # These don't need to be pushed to git
 # becaue webpack combines the modules
 node_modules
-dist
+# dist
