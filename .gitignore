@@ -2,3 +2,4 @@
 # becaue webpack combines the modules
 node_modules
 # dist
+.ds_store
