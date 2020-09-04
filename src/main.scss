@@ -1,1 +1,169 @@
-@import "~bootstrap/scss/bootstrap"
+$font-stack: Helvetica, sans-serif;
+$primary-color: rgb(255, 255, 255);
+
+html {
+  width: 99.9vw;
+  height: 100vh;
+}
+
+body {
+  font: $font-stack;
+  color: $primary-color;
+
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  background: radial-gradient(rgb(41, 41, 41), rgb(34, 35, 37));
+}
+
+img {
+  cursor: auto;
+  border-radius: 15px;
+}
+
+.window {
+  min-width: 5vw;
+  min-height: 5vh;
+  width: auto;
+  height: auto;
+  padding: 1em;
+
+  position: absolute;
+  
+  background-color: rgb(44, 45, 46);
+  border-radius: 15px;
+  border: 1px solid rgb(81, 82, 84);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+
+  color: $primary-color;
+  text-align: center;
+
+  cursor: grab;
+
+  h1 {
+    cursor: auto;
+    width: 90%;
+    font-weight: 200;
+    font-size: 1.2rem;
+    text-align: left;
+
+    a {
+      color: lightblue;
+    }
+
+    a:hover {
+      text-decoration: none;
+      color: rgb(133, 204, 228);
+    }
+
+    a:active {
+      text-decoration: none;
+    }
+  }
+
+  h2 {
+    cursor: auto;
+    width: 90%;
+    color: lightgray;
+    font-weight: 100;
+    font-size: 1.2rem;
+    text-align: left;
+  }
+
+  .profile-picture {
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+  }
+
+  .stack-icon {
+    height: 3rem;
+    width: 3rem;
+    object-fit: scale-down;
+    padding: .1rem;
+  }
+
+  .preview-image {
+    height: auto;
+    width: 20rem;
+    object-fit: scale-down;
+    padding: .5rem;
+  }
+}
+
+.disable-text-select{
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+// Initial Window Placement
+#about-me {
+  left: 13vw;
+  top: 13vh;
+  z-index: 5;
+
+  h1 {
+    margin: 1rem .5rem 0rem .5rem;
+  }
+
+  h2 {
+    margin: 0rem .5rem 0rem .5rem;
+  }
+}
+
+#skillsets {
+  left: 24vw;
+  top: 55vh;
+  z-index: 4;
+
+  img {
+    height: 5rem;
+    width: 5rem;
+    object-fit: scale-down;
+    padding: .5rem;
+    background: rgb(76, 76, 78);
+  }
+
+  img:hover {
+    background: rgb(209, 209, 209);
+  }
+}
+
+#project-1 {
+  left: 61vw;
+  top: 15vh;
+  z-index: 3;
+
+  h1 {
+    margin: 0rem .5rem 0rem .5rem;
+  }
+}
+
+@media (orientation: portrait) {
+  body {
+    .window {
+
+    }
+
+    #about-me {
+      left: 10vw;
+      top: 5vh;
+    }
+    
+    #skillsets {
+      left: 3vw;
+      top: 45vh;
+    }
+
+    #project-1 {
+      left: 35vw;
+      top: 75vh;
+    }
+  }
+}
+
+@import "~bootstrap/scss/bootstrap";

@@ -3,5 +3,3 @@
 // change your code, the user won't have to
 // re-download eveerything
 import "bootstrap"
-
-console.log("Yellow jello")

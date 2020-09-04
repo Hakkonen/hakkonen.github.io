@@ -32,8 +32,13 @@ module.exports = {
                         name: "[name].[hash].[ext]",
                         output: "imgs"
                     }
-                }
+                },
             },
+            {
+                test: /\.js$/,
+                loader: "babel-loader",
+                exclude: /(node_modules)/
+            }
         ],
     },
 };
