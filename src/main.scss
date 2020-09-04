@@ -40,23 +40,11 @@ img {
 
   padding: 1rem;
 
-  .window-selector {
-    width: 100%;
-    height: 100%;
-    padding: 1em;
+  cursor: pointer;
 
-    border: .4rem solid rgb(34, 35, 36);
+  .window-section {
     border-radius: 15px;
-
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-
-    cursor: grab;
-  }
-
-  .window-selector:hover {
-    border: .4rem solid rgb(20, 20, 20);
+    padding: .5rem;
   }
 
   h1 {
@@ -95,15 +83,6 @@ img {
     object-fit: cover;
   }
 
-  .stack-icon {
-    height: 3rem;
-    width: 3rem;
-    object-fit: scale-down;
-    padding: .1rem;
-    margin: .5rem 0rem 0rem .5rem;
-    background: rgb(76, 76, 78);
-  }
-
   .stack-icon:hover {
     background: rgb(209, 209, 209);
   }
@@ -114,6 +93,30 @@ img {
     object-fit: scale-down;
     padding: .5rem;
   }
+}
+
+.main-image {
+  width: 15rem;
+  height: 15rem;
+  object-fit: cover;
+}
+
+.stack-icon {
+  height: 3rem;
+  width: 3rem;
+  object-fit: scale-down;
+  padding: .1rem;
+  margin: .5rem 0rem 0rem .5rem;
+  background: rgb(76, 76, 78);
+}
+
+p {
+  cursor: auto;
+  width: 90%;
+  color: lightgray;
+  font-weight: 100;
+  font-size: 1rem;
+  text-align: left;
 }
 
 .contact {
