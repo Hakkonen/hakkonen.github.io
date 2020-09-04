@@ -27,7 +27,6 @@ img {
   min-height: 5vh;
   width: auto;
   height: auto;
-  padding: 1em;
 
   position: absolute;
   
@@ -39,7 +38,26 @@ img {
   color: $primary-color;
   text-align: center;
 
-  cursor: grab;
+  padding: 1rem;
+
+  .window-selector {
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+
+    border: .4rem solid rgb(34, 35, 36);
+    border-radius: 15px;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    cursor: grab;
+  }
+
+  .window-selector:hover {
+    border: .4rem solid rgb(20, 20, 20);
+  }
 
   h1 {
     cursor: auto;
@@ -67,7 +85,7 @@ img {
     width: 90%;
     color: lightgray;
     font-weight: 100;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: left;
   }
 
@@ -82,6 +100,12 @@ img {
     width: 3rem;
     object-fit: scale-down;
     padding: .1rem;
+    margin: .5rem 0rem 0rem .5rem;
+    background: rgb(76, 76, 78);
+  }
+
+  .stack-icon:hover {
+    background: rgb(209, 209, 209);
   }
 
   .preview-image {
@@ -90,6 +114,17 @@ img {
     object-fit: scale-down;
     padding: .5rem;
   }
+}
+
+.contact {
+  border-radius: 0px !important;
+  filter: invert(.8);
+  width: 3rem;
+  height: 3rem;
+}
+
+.contact:hover {
+  filter: invert(1);
 }
 
 .disable-text-select{
@@ -111,8 +146,17 @@ img {
   }
 
   h2 {
-    margin: 0rem .5rem 0rem .5rem;
+    margin: .3rem .5rem 0rem .5rem;
   }
+}
+
+#email {
+  left: 13vw;
+  top: 52vh;
+  z-index: 6;
+
+  width: auto;
+  height: auto
 }
 
 #skillsets {
@@ -139,19 +183,20 @@ img {
   z-index: 3;
 
   h1 {
-    margin: 0rem .5rem 0rem .5rem;
+    margin: 0rem .5rem 0rem .65rem;
   }
 }
 
 @media (orientation: portrait) {
   body {
-    .window {
-
-    }
-
     #about-me {
       left: 10vw;
       top: 5vh;
+    }
+
+    #email {
+      left: 73vw;
+      top: 9vh;
     }
     
     #skillsets {
