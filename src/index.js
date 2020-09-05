@@ -25,16 +25,6 @@ window.onload = function() {
         null, null, null
     )
 
-    // Project window for react word counter
-    const wordCounter = windowMaker(
-        "word-counter",
-        "Word Counter",
-        "<a href='https://word-counter-by-jayden.herokuapp.com/' target='_blank'>Hosted at Heroku</a>",
-        ["./assets/react.png"],
-        "./assets/word-counter.png",
-        null, null
-    )
-
     // Social and contact
     const socialAndContact = windowMaker(
         "social-contact",
@@ -50,10 +40,24 @@ window.onload = function() {
         null, null, null
     )
 
+    let wordCounter
+    // Run mobile friendly drag function if user is on a mobile device
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) === false) {
+        // Project window for react word counter
+        wordCounter = windowMaker(
+            "word-counter",
+            "Word Counter",
+            "<a href='https://word-counter-by-jayden.herokuapp.com/' target='_blank'>Hosted at Heroku</a>",
+            ["./assets/react.png"],
+            "./assets/word-counter.png",
+            null, null
+        )
+    } 
+
     // Append windows
     // Order determines z-index
     const screen = document.getElementById("screen")
-    screen.appendChild(wordCounter)
+    if(wordCounter) { screen.appendChild(wordCounter) }
     screen.appendChild(myStack)
     screen.appendChild(socialAndContact)
     screen.appendChild(profile)
@@ -76,7 +80,6 @@ window.onload = function() {
         let counter = 1
         const windows = document.getElementsByClassName("window")
         for(const window of windows) {
-            console.log(window.style.zIndex)
             if(counter <= parseInt(window.style.zIndex)) {
                 counter = (parseInt(window.style.zIndex) + 1)
             }
@@ -105,9 +108,5 @@ window.onload = function() {
         }
     })
 
-    // Run mobile friendly drag function if user is on a mobile device
-    // if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        
-    // } 
 }
 
