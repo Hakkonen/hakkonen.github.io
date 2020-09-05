@@ -43,7 +43,9 @@ window.onload = function() {
         {
             "./assets/at-sign.svg": "mailto:jayden@jaydenreynolds.com",
             "./assets/github.svg": "https://github.com/Hakkonen",
-            "./assets/instagram.svg": "https://www.instagram.com/dasistjayden"
+            "./assets/instagram.svg": "https://www.instagram.com/dasistjayden",
+            "./assets/linkedin.svg": "https://www.linkedin.com/in/jayden-reynolds-45ba751b4/",
+            "./assets/sun.svg": "https://www.goodreads.com/quotes/927540-tell-me-the-story-about-how-the-sun-loved-the"
         },
         null, null, null
     )
