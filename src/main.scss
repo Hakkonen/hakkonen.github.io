@@ -48,50 +48,47 @@ img {
   }
 
   h1 {
-    cursor: auto;
-    width: 90%;
     font-weight: 200;
     font-size: 1.2rem;
     text-align: left;
+    margin: 0rem;
+  }
+
+  h2 {
+    color: lightgray;
+    font-weight: 100;
+    font-size: 1rem;
+    text-align: left;
+    margin: .3rem 0rem 0rem 0rem;
 
     a {
       color: lightblue;
     }
-
+  
     a:hover {
       text-decoration: none;
       color: rgb(133, 204, 228);
     }
-
+  
     a:active {
       text-decoration: none;
     }
   }
 
-  h2 {
-    cursor: auto;
-    width: 90%;
+  p {
     color: lightgray;
     font-weight: 100;
     font-size: 1rem;
     text-align: left;
+    margin: 0.2rem 0rem 0rem 0rem;
   }
 
-  .profile-picture {
-    width: 15rem;
-    height: 15rem;
-    object-fit: cover;
+  .stack-icon {
+    fill: white;
   }
 
   .stack-icon:hover {
-    background: rgb(209, 209, 209);
-  }
-
-  .preview-image {
-    height: auto;
-    width: 20rem;
-    object-fit: scale-down;
-    padding: .5rem;
+    background: rgb(145, 145, 145);
   }
 }
 
@@ -104,11 +101,12 @@ img {
   width: 15rem;
   height: 15rem;
   object-fit: cover;
+  margin: 0rem 0rem .5rem 0rem;
 }
 
 .stack-icons {
   text-align: left;
-  margin: .5rem 0rem .5rem 0rem;
+  margin: 0rem 0rem .5rem 0rem;
   .stack-icon {
     height: 3rem;
     width: 3rem;
@@ -116,112 +114,6 @@ img {
     padding: .2rem;
     margin: 0rem .2rem 0rem 0rem;
     background: rgb(76, 76, 78);
-  }
-}
-
-
-
-p {
-  cursor: auto;
-  width: 90%;
-  color: lightgray;
-  font-weight: 100;
-  font-size: 1rem;
-  text-align: left;
-}
-
-.contact {
-  border-radius: 0px !important;
-  filter: invert(.8);
-  width: 3rem;
-  height: 3rem;
-}
-
-.contact:hover {
-  filter: invert(1);
-}
-
-.disable-text-select{
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-  -ms-user-select: none;
-  user-select: none
-}
-
-// Initial Window Placement
-#about-me {
-  left: 13vw;
-  top: 13vh;
-  z-index: 5;
-
-  h1 {
-    margin: 1rem .5rem 0rem .5rem;
-  }
-
-  h2 {
-    margin: .3rem .5rem 0rem .5rem;
-  }
-}
-
-#email {
-  left: 13vw;
-  top: 52vh;
-  z-index: 6;
-
-  width: auto;
-  height: auto
-}
-
-#skillsets {
-  left: 24vw;
-  top: 55vh;
-  z-index: 4;
-
-  img {
-    height: 5rem;
-    width: 5rem;
-    object-fit: scale-down;
-    padding: .5rem;
-    background: rgb(76, 76, 78);
-  }
-
-  img:hover {
-    background: rgb(209, 209, 209);
-  }
-}
-
-#project-1 {
-  left: 61vw;
-  top: 15vh;
-  z-index: 3;
-
-  h1 {
-    margin: 0rem .5rem 0rem .65rem;
-  }
-}
-
-@media (orientation: portrait) {
-  body {
-    #about-me {
-      left: 10vw;
-      top: 5vh;
-    }
-
-    #email {
-      left: 73vw;
-      top: 9vh;
-    }
-    
-    #skillsets {
-      left: 3vw;
-      top: 45vh;
-    }
-
-    #project-1 {
-      left: 35vw;
-      top: 75vh;
-    }
   }
 }
 

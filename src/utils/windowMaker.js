@@ -1,19 +1,20 @@
 function windowMaker(
-    windowID, 
-    headerText = null, 
-    subHeaderText = null,
-    stackIcons = [],
-    mainImage = null,
-    subHeader = null,
-    mainText = null
+    windowID, // ID for element
+    headerText = null, // Optional: <h1> Header text
+    subHeaderText = null, // Optional: <h2> Subheader text
+    stackIcons = null, // Optional: Stack Icons
+    // Input as array: ["src", "src"] or object { "src": "link", "src": "link" }
+    mainImage = null, // Optional: Hero image
+    subHeader = null, // Optional: <h1> Subheader
+    mainText = null // Optional: Main <p> text body
     ) {
 
     // Create window element
     const windowElement = document.createElement("div")
     windowElement.setAttribute("class", "window draggable")
     windowElement.setAttribute("id", windowID)
-    windowElement.style.top = `${Math.random() * 10}%`
-    windowElement.style.left = `${Math.random() * 10}%`
+    windowElement.style.top = `${Math.random() * 50}%`
+    windowElement.style.left = `${Math.random() * 40}%`
 
     // opt: Create header element
     if(headerText) {
@@ -28,10 +29,18 @@ function windowMaker(
         // opt: Create subheader element
         if(subHeaderText) {
             const subHeaderElement = document.createElement("h2")
-            const subHeaderElementText = document.createTextNode(
-                `${subHeaderText}`
+            subHeaderElement.setAttribute("id", `${windowID}-subheader`)
+            // Allows for insertion of link tags in subheader text
+            if(/<a/g.test(subHeaderText)) {
+                subHeaderElement.insertAdjacentHTML("beforeend", 
+                    `${subHeaderText}`
                 )
-            subHeaderElement.appendChild(subHeaderElementText)
+            } else {
+                const subHeaderElementText = document.createTextNode(
+                    `${subHeaderText}`
+                    )
+                subHeaderElement.appendChild(subHeaderElementText)
+            }
             headerContainer.appendChild(subHeaderElement)
         }
 
@@ -39,14 +48,35 @@ function windowMaker(
     }
 
     // opt: Create stack icon elements
-    if(stackIcons.length > 0) {
+    if(stackIcons) {
         const stackIconContainer = document.createElement("div")
         stackIconContainer.setAttribute("class", "stack-icons")
-        for(const icon of stackIcons) {
-            const iconImage = document.createElement("img")
-            iconImage.setAttribute("src", `${icon}`)
-            iconImage.setAttribute("class", "stack-icon")
-            stackIconContainer.appendChild(iconImage)
+    
+        // If an array is put through, render icons
+        // If an object is put through, render icons with links
+        if(Array.isArray(stackIcons)) {
+            for(const icon of stackIcons) {
+                // For every icon source create img wrapper
+                const iconImage = document.createElement("img")
+                iconImage.setAttribute("src", `${icon}`)
+                iconImage.setAttribute("class", "stack-icon")
+                // Append img wrapper to div element
+                stackIconContainer.appendChild(iconImage)
+            }
+        } else if (typeof stackIcons === "object") {
+            for(const icon in stackIcons) {
+                // Create <a> wrapper
+                const imageLink = document.createElement("a")
+                imageLink.setAttribute("href", `${stackIcons[icon]}`)
+                imageLink.setAttribute("target", "_blank")
+                // Source image
+                const iconImage = document.createElement("img")
+                iconImage.setAttribute("src", `${icon}`)
+                iconImage.setAttribute("class", "stack-icon")
+                // Append wrapped image
+                imageLink.appendChild(iconImage)
+                stackIconContainer.appendChild(imageLink)
+            }
         }
 
         windowElement.appendChild(stackIconContainer)

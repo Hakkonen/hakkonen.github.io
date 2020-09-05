@@ -4,29 +4,56 @@ import "./main.scss"
 
 window.onload = function() {
 
+    // MARK: Generate windows
     // Make profile window
     const profile = windowMaker(
-        "profile",
-        "Hello world",
-        "This is me",
-        ["/assets/JavaScript-logo.png", "/assets/HTML5_Logo.svg"],
-        "/assets/IMG_4263.JPG",
+        null,
+        null,
+        null,
+        [],
+        "./assets/profile.JPG",
         "Jayden Reynolds",
         "Web Developer",
     )
 
+    // Stack window
+    const myStack = windowMaker(
+        "my-stack",
+        "Stacks",
+        null,
+        ["./assets/js.png", "./assets/webpack.svg", "./assets/html5.svg", "./assets/css3.png", "./assets/react.png", "./assets/node-js.png"],
+        null, null, null
+    )
+
+    // Project window for react word counter
     const wordCounter = windowMaker(
         "word-counter",
-        "test",
-        "react",
-        ["/assets/react.png"],
-        "/assets/word-counter.png",
+        "Word Counter",
+        "<a href='https://word-counter-by-jayden.herokuapp.com/' target='_blank'>Hosted at Heroku</a>",
+        ["./assets/react.png"],
+        "./assets/word-counter.png",
         null, null
     )
 
+    // Social and contact
+    const socialAndContact = windowMaker(
+        "social-contact",
+        "Where to find me",
+        null,
+        {
+            "./assets/at-sign.svg": "mailto:jayden@jaydenreynolds.com",
+            "./assets/github.svg": "https://github.com/Hakkonen",
+            "./assets/instagram.svg": "https://www.instagram.com/dasistjayden"
+        },
+        null, null, null
+    )
+
     // Append windows
+    // Order determines z-index
     const screen = document.getElementById("screen")
     screen.appendChild(wordCounter)
+    screen.appendChild(myStack)
+    screen.appendChild(socialAndContact)
     screen.appendChild(profile)
     
 
@@ -37,17 +64,16 @@ window.onload = function() {
         position[element.id] = {
             x: 0, y: 0
         }
-        console.log("working")
     }
 
     // Moves windows
+    // Created by Interactjs.io
     interact('.draggable').draggable({
         listeners: {
             start (event) {
             const thisElement = event.target.id
-            console.log(event.type, event.target)
-            console.log(event.target.id)
-            console.log(position[thisElement])
+            // console.log(event.type, event.target)
+            // console.log(event.target.id)
             },
             move (event) {
             const thisElement = event.target.id
@@ -61,8 +87,8 @@ window.onload = function() {
         })
 
     // Run mobile friendly drag function if user is on a mobile device
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    // if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         
-    } 
+    // } 
 }
 

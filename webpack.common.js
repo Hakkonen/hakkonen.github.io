@@ -2,6 +2,7 @@
 // const path = require("path")
 
 
+
 module.exports = {
     // Stops code condensing
     // mode: "development",
@@ -25,14 +26,12 @@ module.exports = {
                 use: ["html-loader"]
             },
             {
-                test: /\.(svg|png|jpg|gif)$/,
-                use: {
-                    loader: "file-loader",
-                    options: {
-                        name: "[name].[hash].[ext]",
-                        output: "imgs"
-                    }
-                },
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                loader: "file-loader",
+                options: {
+                    name: "[name].[hash].[ext]",
+                    output: "imgs"
+                }
             },
             {
                 test: /\.js$/,
