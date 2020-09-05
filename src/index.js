@@ -11,7 +11,7 @@ window.onload = function() {
         null,
         null,
         [],
-        "./assets/profile.JPG",
+        "./assets/profile.jpg",
         "Jayden Reynolds",
         "Web Developer",
     )
