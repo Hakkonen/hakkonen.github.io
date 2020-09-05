@@ -7,14 +7,13 @@ function windowMaker(
     subHeader = null,
     mainText = null
     ) {
-    // Anchor to screen id
-    const screen = document.getElementById("screen")
 
     // Create window element
     const windowElement = document.createElement("div")
-    windowElement.setAttribute("class", "window")
+    windowElement.setAttribute("class", "window draggable")
     windowElement.setAttribute("id", windowID)
-    windowElement.setAttribute("style", "top: 20%; left: 15%;")
+    windowElement.style.top = `${Math.random() * 10}%`
+    windowElement.style.left = `${Math.random() * 10}%`
 
     // opt: Create header element
     if(headerText) {
@@ -91,7 +90,7 @@ function windowMaker(
     }
 
     // Append window to main div
-    screen.appendChild(windowElement)
+    return windowElement
 }
 
 export { windowMaker }

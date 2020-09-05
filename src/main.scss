@@ -95,20 +95,31 @@ img {
   }
 }
 
+.draggable {
+  touch-action: none;
+  user-select: none;
+}
+
 .main-image {
   width: 15rem;
   height: 15rem;
   object-fit: cover;
 }
 
-.stack-icon {
-  height: 3rem;
-  width: 3rem;
-  object-fit: scale-down;
-  padding: .1rem;
-  margin: .5rem 0rem 0rem .5rem;
-  background: rgb(76, 76, 78);
+.stack-icons {
+  text-align: left;
+  margin: .5rem 0rem .5rem 0rem;
+  .stack-icon {
+    height: 3rem;
+    width: 3rem;
+    object-fit: scale-down;
+    padding: .2rem;
+    margin: 0rem .2rem 0rem 0rem;
+    background: rgb(76, 76, 78);
+  }
 }
+
+
 
 p {
   cursor: auto;
