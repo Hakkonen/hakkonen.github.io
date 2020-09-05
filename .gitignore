@@ -3,3 +3,5 @@
 node_modules
 # dist
 .ds_store
+
+# Git branch push: git subtree push --prefix dist origin gh-pages

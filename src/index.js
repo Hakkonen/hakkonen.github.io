@@ -63,9 +63,25 @@ window.onload = function() {
     const position = {}
     const classElements = document.getElementsByClassName("window")
     for(const element of classElements) {
+        // Create position variable
         position[element.id] = {
             x: 0, y: 0
         }
+    }
+
+    // Manages z-index
+    // TODO: Reset other windows so it isn't possible to
+    // overload z-index
+    const setZ = () => {
+        let counter = 1
+        const windows = document.getElementsByClassName("window")
+        for(const window of windows) {
+            console.log(window.style.zIndex)
+            if(counter <= parseInt(window.style.zIndex)) {
+                counter = (parseInt(window.style.zIndex) + 1)
+            }
+        }
+        return counter.toString()
     }
 
     // Moves windows
@@ -73,9 +89,10 @@ window.onload = function() {
     interact('.draggable').draggable({
         listeners: {
             start (event) {
-            const thisElement = event.target.id
             // console.log(event.type, event.target)
             // console.log(event.target.id)
+            const newZ = setZ()
+            event.target.style.zIndex = newZ
             },
             move (event) {
             const thisElement = event.target.id
@@ -86,7 +103,7 @@ window.onload = function() {
                 `translate(${position[thisElement].x}px, ${position[thisElement].y}px)`
             },
         }
-        })
+    })
 
     // Run mobile friendly drag function if user is on a mobile device
     // if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {

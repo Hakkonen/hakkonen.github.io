@@ -117,4 +117,10 @@ img {
   }
 }
 
+@media (orientation: portrait) {
+  #social-contact {
+    min-width: 10em;
+  }
+}
+
 @import "~bootstrap/scss/bootstrap";
