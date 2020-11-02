@@ -13,17 +13,17 @@ window.onload = function() {
         [],
         "./assets/profile.jpg",
         "Jayden Reynolds",
-        "Web Developer",
+        "Photographer",
     )
 
-    // Stack window
-    const myStack = windowMaker(
-        "my-stack",
-        "Stacks",
-        null,
-        ["./assets/js.png", "./assets/webpack.svg", "./assets/html5.svg", "./assets/css3.png", "./assets/react.png", "./assets/node-js.png"],
-        null, null, null
-    )
+    // // Stack window
+    // const myStack = windowMaker(
+    //     "my-stack",
+    //     "Stacks",
+    //     null,
+    //     ["./assets/js.png", "./assets/webpack.svg", "./assets/html5.svg", "./assets/css3.png", "./assets/react.png", "./assets/node-js.png"],
+    //     null, null, null
+    // )
 
     // Social and contact
     const socialAndContact = windowMaker(
@@ -32,24 +32,38 @@ window.onload = function() {
         null,
         {
             "./assets/at-sign.svg": "mailto:jayden@jaydenreynolds.com",
-            "./assets/github.svg": "https://github.com/Hakkonen",
             "./assets/instagram.svg": "https://www.instagram.com/dasistjayden",
             "./assets/linkedin.svg": "https://www.linkedin.com/in/jayden-reynolds-45ba751b4/",
+            "./assets/github.svg": "https://github.com/Hakkonen",
             "./assets/sun.svg": "https://www.goodreads.com/quotes/927540-tell-me-the-story-about-how-the-sun-loved-the"
         },
         null, null, null
     )
 
-    let wordCounter
+    // let wordCounter
+    // // Run mobile friendly drag function if user is on a mobile device
+    // if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) === false) {
+    //     // Project window for react word counter
+    //     wordCounter = windowMaker(
+    //         "word-counter",
+    //         "Word Counter",
+    //         "<a href='https://word-counter-by-jayden.herokuapp.com/' target='_blank'>Hosted at Heroku</a>",
+    //         ["./assets/react.png"],
+    //         "./assets/word-counter.png",
+    //         null, null
+    //     )
+    // } 
+
+    let splashImage
     // Run mobile friendly drag function if user is on a mobile device
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) === false) {
         // Project window for react word counter
-        wordCounter = windowMaker(
-            "word-counter",
-            "Word Counter",
-            "<a href='https://word-counter-by-jayden.herokuapp.com/' target='_blank'>Hosted at Heroku</a>",
-            ["./assets/react.png"],
-            "./assets/word-counter.png",
+        splashImage = windowMaker(
+            "splash-photo",
+            null,
+            null,
+            [],
+            "./assets/000050.jpg",
             null, null
         )
     } 
@@ -57,8 +71,8 @@ window.onload = function() {
     // Append windows
     // Order determines z-index
     const screen = document.getElementById("screen")
-    if(wordCounter) { screen.appendChild(wordCounter) }
-    screen.appendChild(myStack)
+    if(splashImage) { screen.appendChild(splashImage) }
+    // screen.appendChild(myStack)
     screen.appendChild(socialAndContact)
     screen.appendChild(profile)
     
